@@ -1,1 +1,31 @@
-<p>navbar works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-3 bg-dark min-vh-100 p-0 sidebar">
+            <div class="text-center py-4">
+                <img src="assets/osadia.png" alt="Logo" class="logo">
+            </div>
+
+            <!-- Menú de navegación -->
+            <div class="list-group list-group-flush">
+                <li *ngFor="let item of lista" 
+                   class="list-group-item list-group-item-action bg-dark text-white border-0 py-3 sidebar-item">
+                    <div class="d-flex align-items-center fs-5">
+                        <i class="fas fa-circle me-3"></i>
+                        {{item}}
+                    </div>
+                </li>
+            </div>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="col-9 p-4">
+            <div class="container-fluid">
+                <div class="card bg-secondary text-white p-4 shadow-lg">
+                    <h4>Bienvenido al sistema de inventario</h4>
+                    <p>Administra productos, ventas y más de manera eficiente.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
