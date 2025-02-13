@@ -16,6 +16,17 @@
 
 .sidebar {
     background: #121212;
+    position: fixed;
+    width: 25%;
+    overflow-y: auto;
+    height: 100vh;
+    top: 0;
+    left: 0;
+
+}
+
+.main-s {
+    margin-left: 25%;
 }
 
 .text-gold {
