@@ -10,7 +10,8 @@
 .sidebar-item:hover {
     /* background-color: #343a40; */
     background: rgba(255, 215, 0, 0.3) !important;
-    transform: translateX(5px); 
+    transform: translateX(5px);
+    cursor: pointer;
 }
 
 .sidebar {
@@ -23,7 +24,6 @@
 
 .logo {
     width: 220px;
-    /* border-radius: 50%; */
 }
 
 .card {
