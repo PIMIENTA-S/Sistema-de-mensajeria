@@ -1,0 +1,61 @@
+<div class="container py-4">
+    <h1>Dashboard</h1>
+  
+    <!-- Cards -->
+    <div class="row g-4 mb-4">
+      @for (card of cards(); track card.title) {
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div [ngClass]="getCardClass(card.type)" class="p-4 rounded text-white">
+            <h3>{{card.title}}</h3>
+            <div class="mt-2">
+              <a href="#" class="text-light">Ver Detalles ></a>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  
+    <!-- Charts -->
+    <div class="row g-4">
+      <!-- Area Chart -->
+      <div class="col-12 col-md-6">
+        <div class="border rounded p-4">
+          <h3>{{areaChartData().title}}</h3>
+          <div class="chart-container" style="height: 300px">
+            <div class="d-flex flex-column">
+              @for (value of areaChartData().values; track $index) {
+                <div class="d-flex align-items-center gap-2 text-sm">
+                  <span>{{areaChartData().labels[$index]}}:</span>
+                  <div class="bg-primary h-100" 
+                       [style.width.%]="(value / getMaxValue(areaChartData().values)) * 100" 
+                       style="height: 16px;">
+                  </div>
+                  <span>{{value}}</span>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Bar Chart -->
+      <div class="col-12 col-md-6">
+        <div class="border rounded p-4">
+          <h3>{{barChartData().title}}</h3>
+          <div class="chart-container d-flex align-items-end" style="height: 300px">
+            <div class="d-flex gap-3 w-100 align-items-end">
+              @for (value of barChartData().values; track $index) {
+                <div class="d-flex flex-column align-items-center flex-grow-1">
+                  <div class="bg-primary w-100" 
+                       [style.height.%]="(value / getMaxValue(barChartData().values)) * 100">
+                  </div>
+                  <span class="small mt-2">{{barChartData().labels[$index]}}</span>
+                  <span class="small">{{value}}</span>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
