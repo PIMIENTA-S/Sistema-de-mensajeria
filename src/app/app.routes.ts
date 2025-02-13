@@ -1,13 +1,22 @@
 import { Routes } from '@angular/router';
-import { ProductListComponent } from './product-list/product-list.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { ReporteComponent } from './components/reporte/reporte.component';
 
 export const routes: Routes = [
+
     {
-        path: "product",
+        path: "dashboard",
+        component: NavbarComponent
+    },
+    {
+        path: "productos",
         component: ProductListComponent
     },
     {
-        path: "**",
-        redirectTo: "/product"
-    }
+        path: "reportes",
+        component: ReporteComponent
+    },
+
+    { path: '**', redirectTo: '/dashboard' }
 ];
