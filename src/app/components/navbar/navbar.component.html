@@ -8,29 +8,15 @@
 
             <!-- Menú de navegación -->
             <div class="list-group list-group-flush">
-                <li *ngFor="let item of lista" 
-                   class="list-group-item list-group-item-action bg-dark text-white border-0 py-3 sidebar-item">
-                    <div 
-                    class="d-flex align-items-center fs-5 ps-3"
-                    [routerLink]= "item.route"
-                    routerLinkActive="router-link-active">
+                <a *ngFor="let item of lista" 
+                   class="list-group-item list-group-item-action bg-dark text-white border-0 py-3 sidebar-item"
+                   [routerLink]= "item.route"
+                   routerLinkActive="router-link-active"
+                >
+                    <div class="d-flex align-items-center fs-5 ps-3">
                         {{item.name}}
                     </div>
-                </li>
-            </div>
-        </div>
-
-        <!-- Contenido principal -->
-        <div class="col-9 p-4 main-s">
-            <div class="container-fluid">
-                <div class="card bg-secondary text-white p-4 shadow-lg">
-                    <h4>Bienvenido al sistema de inventario</h4>
-                    <p>Administra productos, ventas y más de manera eficiente.</p>
-                </div>
-            </div>
-            <br>
-            <div>
-                <router-outlet></router-outlet>
+                </a>
             </div>
         </div>
     </div>
