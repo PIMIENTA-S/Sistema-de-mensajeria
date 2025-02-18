@@ -1,0 +1,41 @@
+<div class="container mt-4">
+    <!-- Encabezado simple -->
+    <div class="d-flex justify-content-between mb-4">
+      <h2>Proveedores</h2>
+      <button class="btn btn-primary">+ Nuevo Proveedor</button>
+    </div>
+
+    <!-- Tabla de proveedores -->
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Empresa</th>
+            <th>Contacto</th>
+            <th>Teléfono</th>
+            <th>Productos</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for(supplier of suppliers; track supplier.id) {
+            <tr>
+              <td>{{supplier.name}}</td>
+              <td>{{supplier.contact}}</td>
+              <td>{{supplier.phone}}</td>
+              <td>
+                <span class="badge bg-secondary me-1" 
+                      *ngFor="let product of supplier.products">
+                  {{product}}
+                </span>
+              </td>
+              <td>
+                <button class="btn btn-sm btn-outline-primary me-2">Editar</button>
+                <button class="btn btn-sm btn-outline-danger">Eliminar</button>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+</div>
