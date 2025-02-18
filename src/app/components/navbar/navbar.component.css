@@ -1,16 +1,16 @@
 .sidebar {
     position: fixed;
-    width: 300px; /* Ancho fijo en lugar de porcentaje para mejor consistencia */
+    width: 20%;
     height: 100vh;
     top: 0;
     left: 0;
     background: #121212;
     overflow-y: auto;
-    z-index: 1000; /* Asegura que el sidebar esté por encima de otros elementos */
+    z-index: 1000; /* sidebar esté por encima de otros elementos */
 }
 
 .sidebar-item {
-    transition: all 0.3s ease; /* Simplifica las transiciones */
+    transition: all 0.3s ease;
     background-color: #000;
     padding: 0.75rem 1rem;
 }
@@ -27,7 +27,6 @@
     margin: 1rem 0;
 }
 
-/* Clases utilitarias */
 .text-gold {
     color: gold;
 }
