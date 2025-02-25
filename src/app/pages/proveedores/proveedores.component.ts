@@ -117,6 +117,11 @@ export class ProveedoresComponent {
       products: ["Peroni", "Moretti", "Birra del Borgo"]
     }
   ];
+
+
+  addsupplier(){
+    
+  }
   
   
 
