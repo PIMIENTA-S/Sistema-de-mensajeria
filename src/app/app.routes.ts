@@ -3,8 +3,13 @@ import { ProductListComponent } from './pages/product-list/product-list.componen
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ReporteComponent } from './components/reporte/reporte.component';
 import { ProveedoresComponent } from './pages/proveedores/proveedores.component';
+import { LoginComponent } from './pages/login/login.component';
 
 export const routes: Routes = [
+    {
+        path: "login",
+        component: LoginComponent
+    },
 
     {
         path: "dashboard",
@@ -23,5 +28,5 @@ export const routes: Routes = [
         component: ProveedoresComponent
     },
 
-    { path: '**', redirectTo: '/dashboard' }
+    { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
