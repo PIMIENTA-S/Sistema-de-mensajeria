@@ -1,1 +1,56 @@
-<p>login works!</p>
+<div class="vh-100 d-flex justify-content-center align-items-center bg-light-subtle">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card shadow">
+            <div class="card-header bg-primary text-white text-center py-3">
+              <h4 class="mb-0">MEMBER LOGIN</h4>
+            </div>
+            <div class="card-body p-4">
+              <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                  <div class="input-group">
+                    <span class="input-group-text bg-light">
+                      <i class="bi bi-person"></i>
+                    </span>
+                    <input 
+                      type="text" 
+                      formControlName="username" 
+                      class="form-control" 
+                      placeholder="Username"
+                      [ngClass]="{'is-invalid': submitted && f['username'].errors}" 
+                    />
+                  </div>
+                  <div *ngIf="submitted && f['username'].errors" class="invalid-feedback d-block">
+                    <div *ngIf="f['username'].errors['required']">Username is required</div>
+                  </div>
+                </div>
+                
+                <div class="mb-4">
+                  <div class="input-group">
+                    <span class="input-group-text bg-light">
+                      <i class="bi bi-lock"></i>
+                    </span>
+                    <input 
+                      type="password" 
+                      formControlName="password" 
+                      class="form-control" 
+                      placeholder="Password"
+                      [ngClass]="{'is-invalid': submitted && f['password'].errors}" 
+                    />
+                  </div>
+                  <div *ngIf="submitted && f['password'].errors" class="invalid-feedback d-block">
+                    <div *ngIf="f['password'].errors['required']">Password is required</div>
+                  </div>
+                </div>
+                
+                <div class="d-grid">
+                  <button type="submit" class="btn btn-primary btn-lg">LOGIN</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

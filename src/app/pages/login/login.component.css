@@ -1,0 +1,22 @@
+/* login.component.css */
+.card {
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .card-header {
+    border-bottom: none;
+  }
+  
+  .form-control {
+    padding: 12px;
+  }
+  
+  .input-group-text {
+    border: none;
+  }
+  
+  .btn-primary {
+    padding: 12px;
+  }
